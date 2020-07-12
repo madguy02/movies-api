@@ -30,13 +30,10 @@ export async function movieSelection (movies: any) {
             selectedMovies.push(movie)
         } else {
             for (let mov of selectedMovies) {
-                console.log(mov.movieName)
-                console.log(movie.movieName)
                 if (util.dateCheck(mov.startDate, mov.endDate, movie.startDate, movie.endDate)) {
                     count = count + 1
                 }
             }
-            console.log(count)
             if (count === selectedMovies.length) {
                 selectedMovies.push(movie)
             }

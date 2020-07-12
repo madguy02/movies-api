@@ -5,6 +5,9 @@
   "main": "index.js",
   "repository": "https://github.com/madguy02/movies-api.git",
   "author": "Manish Kakoti",
+  "scripts": {
+    "start" : "node -r ts-node/register --max-old-space-size=4096 app.ts"
+  },
   "license": "MIT",
   "private": null,
   "dependencies": {
