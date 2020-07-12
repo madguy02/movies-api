@@ -5,11 +5,17 @@ export function dateCheck(from: any, to: any, dateFrom: any, dateTo: any) {
     const constructCheckFromDate = new Date(dateFrom).getTime()
     const constructCheckToDate = new Date(dateTo).getTime()
 
-    if ( ( constructNewFromDate > constructCheckFromDate && constructCheckToDate > constructNewToDate === true) || (constructCheckFromDate >= constructNewFromDate && constructCheckToDate <= constructNewToDate) ) {
+    if ( ( constructNewFromDate > constructCheckFromDate && constructCheckToDate > constructNewToDate === true)
+        || (constructCheckFromDate >= constructNewFromDate && constructCheckToDate <= constructNewToDate) ) {
         return false
     }
 
-    if ((constructCheckFromDate < constructNewFromDate && constructCheckToDate < constructNewToDate) && (constructCheckToDate >= constructNewFromDate && constructCheckToDate <= constructNewToDate)) {
+
+    if (constructCheckFromDate >= constructNewFromDate && constructCheckFromDate <= constructNewToDate) {
+        return false
+    }
+
+    if (constructCheckToDate >= constructNewFromDate && constructCheckToDate <= constructNewToDate) {
         return false
     }
 

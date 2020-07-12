@@ -15,7 +15,7 @@ export async function calculateDiffTime (movies: any) {
 }
 
 export async function sortByDiffTime(moviesWithDiffAttr: any) {
-    const sort = _.orderBy(moviesWithDiffAttr, 'diffTime', 'asc')
+    const sort = _.orderBy(moviesWithDiffAttr, 'endDate', 'asc')
 
     return sort
 }
@@ -24,6 +24,7 @@ export async function movieSelection (movies: any) {
     let selectedMovies: any = []
     const calcDiffTime = await calculateDiffTime(movies)
     const sortByDiff =  await sortByDiffTime(calcDiffTime)
+    console.log(sortByDiff)
     console.log(sortByDiff)
     for (let movie of sortByDiff) {
         let count = 0
